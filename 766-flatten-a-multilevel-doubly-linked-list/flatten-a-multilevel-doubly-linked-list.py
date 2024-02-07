@@ -31,12 +31,11 @@ class Solution:
                         sp = stack.pop()
                         if sp:
                             found = True    
+                            p.next = sp
+                            sp.prev = p
+                            p = sp
                             break
-                    if found:
-                        p.next = sp
-                        sp.prev = p
-                        p = sp
-                    else:
+                    if not found:
                         return head
                 else:
                     return head
