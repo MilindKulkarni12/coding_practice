@@ -14,28 +14,27 @@ class Solution:
         stack = []
 
         while p:
-            if p:
-                if p.child:
-                    stack.append(p.next) # p = 1, p.n = 2, p.c = 3
-                    p.next = p.child  # p = 1, p.n = 3, p.c = 3                    
-                    p.child.prev = p # p = 1, p.c = 3
-                    sp = p # p = 1, sp = 1
-                    p = p.next # p = 3, sp = 1
-                    sp.child = None
-                    # print(p.val, p.child.prev.val, p.child.val)
-                elif p.next:
-                    p = p.next
-                elif len(stack):
-                    found = False
-                    while len(stack): 
-                        sp = stack.pop()
-                        if sp:
-                            found = True    
-                            p.next = sp
-                            sp.prev = p
-                            p = sp
-                            break
-                    if not found:
-                        return head
-                else:
+            if p.child:
+                stack.append(p.next) # p = 1, p.n = 2, p.c = 3
+                p.next = p.child  # p = 1, p.n = 3, p.c = 3                    
+                p.child.prev = p # p = 1, p.c = 3
+                sp = p # p = 1, sp = 1
+                p = p.next # p = 3, sp = 1
+                sp.child = None
+                # print(p.val, p.child.prev.val, p.child.val)
+            elif p.next:
+                p = p.next
+            elif len(stack):
+                found = False
+                while len(stack): 
+                    sp = stack.pop()
+                    if sp:
+                        found = True    
+                        p.next = sp
+                        sp.prev = p
+                        p = sp
+                        break
+                if not found:
                     return head
+            else:
+                return head
