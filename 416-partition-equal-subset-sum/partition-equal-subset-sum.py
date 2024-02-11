@@ -7,27 +7,15 @@ class Solution:
             return False
 
         # memoize
-        dp = [ [-1]*(total//2 + 1) for _ in range(len(nums) + 1)]
-
-        def fx(n, total):
-            if total == 0:
-                # reqd sum achieved
-                return True
-            if n == 0:
-                # list parsed compeletely
-                return False
-            
-            # check if already parsed
-            if dp[n-1][total] != -1:
-                return dp[n-1][total]
-
-            if nums[n - 1] <= total:
-                # include OR exclude
-                dp[n-1][total] = fx(n - 1, total - nums[n - 1]) or fx(n - 1, total)
-            # move to next
-            else:
-                dp[n-1][total] = fx(n - 1, total)
-            
-            return dp[n-1][total]
-
-        return fx(len(nums), total //2)
+        dp = [ [False]*(total//2 + 1) for _ in range(len(nums) + 1)]
+        for i in range(len(nums) + 1):
+            dp[i][0] = True
+        # print(dp)
+        for i in range(1, len(nums) + 1):
+            for t in range(1, total//2 + 1):
+                if nums[i - 1] <= t:
+                    dp[i][t] = dp[i - 1][t - nums[i - 1]] or dp[i - 1][t]
+                else:
+                    dp[i][t] = dp[i - 1][t]
+        return dp[len(nums)][total//2]
+        
