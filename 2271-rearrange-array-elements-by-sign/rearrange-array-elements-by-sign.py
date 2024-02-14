@@ -5,16 +5,16 @@ class Solution:
         l = []
         turn = True
         while len(l) != len(nums):
-            if turn and nums[pos] >= 0:
+            if turn:
+                while nums[pos] < 0:
+                    pos += 1
                 l.append(nums[pos])
                 pos += 1
                 turn = False
-            elif turn and nums[pos] < 0:
-                pos += 1
-            elif not turn and nums[neg] < 0:
+            else:
+                while nums[neg] >= 0:
+                    neg += 1
                 l.append(nums[neg])
                 neg += 1
                 turn = True
-            else:
-                neg += 1
         return l
