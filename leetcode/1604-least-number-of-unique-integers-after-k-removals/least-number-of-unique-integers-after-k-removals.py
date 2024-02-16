@@ -4,9 +4,9 @@ class Solution:
         freq = dict(sorted(freq.items(), key=lambda x: x[1]))
         remove = 0
         for key, val in freq.items():
-            if val <= k:
+            if k and val <= k:
                 remove += 1
                 k -= val
-            if k == 0:
+            else:
                 break
         return len(freq.keys()) - remove
