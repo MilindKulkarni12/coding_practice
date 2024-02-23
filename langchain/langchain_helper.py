@@ -8,8 +8,7 @@ llm = OpenAI(base_url="http://localhost:1234/v1", api_key="not-needed", temperat
 def generate_restaurant_name_and_menu(cuisine):
     prompt_template_name = PromptTemplate(
         input_variables=['cuisine'],
-        template="""I want to open a restaurant for {cuisine} food, 
-        suggest only one fancy name for the restaurant without any comments."""
+        template="""I want to open a restaurant for {cuisine} food, suggest the best fancy name for the restaurant."""
     )
     name_chain = LLMChain(llm=llm, prompt=prompt_template_name, output_key="restaurant_name")
 
@@ -29,7 +28,6 @@ def generate_restaurant_name_and_menu(cuisine):
     })
 
     print(response)
-
     return response
 
 
