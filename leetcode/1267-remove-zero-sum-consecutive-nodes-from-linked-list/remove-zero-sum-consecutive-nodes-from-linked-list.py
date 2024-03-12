@@ -27,7 +27,7 @@ class Solution:
                 curr = start.next # 3 -> 6
                 end = p
                 s_atp = s
-                print(s, start.val, end.val, s_atp, curr.val)
+                # print(s, start.val, end.val, s_atp, curr.val)
                 # print(s_atp, end.val)
                 # print(prefix_sum)
                 while curr != end:
