@@ -1,8 +1,11 @@
 class Solution:
     def pivotInteger(self, n: int) -> int:
         nsum = (n*(n+1))//2
+        isum = prev = 0
         for x in range(n+1):
-            xsum = (((2*x) + (n - x + 1 - 1))*(n - x + 1))//2 
-            if xsum == (nsum - xsum + x):
+            isum += x
+            xsum = nsum - prev
+            prev = isum
+            if xsum == isum:
                 return x
         return -1
