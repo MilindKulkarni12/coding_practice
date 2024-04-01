@@ -24,19 +24,19 @@ class Solution:
         if n % 2 != 0:
             k = '1' if freq['1'] > freq['0'] else '0'
             count = 0
-            for i, c in enumerate(s):
+            for c in s:
                 if c != k:
                     count += 1
                 k = '0' if k == '1' else '1'
         else:
             k = '1'
             count1 = count2 = 0
-            for i, c in enumerate(s):
+            for c in s:
                 if c != k:
                     count1 += 1
                 k = '0' if k == '1' else '1'
             k = '0'
-            for i, c in enumerate(s):
+            for c in s:
                 if c != k:
                     count2 += 1
                 k = '0' if k == '1' else '1'
