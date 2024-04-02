@@ -7,7 +7,6 @@ class Solution:
         for k in freq.keys():
             clicks += freq[k]*offset
             i += 1
-            if i == 9:
+            if i % 9 == 0:
                 offset += 1
-                i = 0
         return clicks
