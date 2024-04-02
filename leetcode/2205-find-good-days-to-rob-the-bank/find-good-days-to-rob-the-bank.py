@@ -5,13 +5,13 @@ class Solution:
         n = len(security)
         inc, dec = [0]*n, [0]*n
         i, j = 0, n - 1
-
         while i < n:
-            inc[i] = inc[i-1] + 1 if i > 0 and security[i] <= security[i-1] else 0
-            dec[j] = dec[j+1] + 1 if j < n-1 and security[j] <= security[j+1] else 0
+            if i > 0 and security[i] <= security[i-1]:
+                inc[i] = inc[i - 1] + 1
+            if j < n-1 and security[j] <= security[j+1]:
+                dec[j] = dec[j + 1] + 1
             i += 1
             j -= 1
-        # print(inc, dec)
         ans = []
         for i in range(time, n - time):
             if inc[i] >= time and dec[i] >= time:
