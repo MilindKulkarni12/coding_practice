@@ -9,9 +9,9 @@ class Solution:
             if height[left] <= height[right]:
                 left += 1
                 mx_left = max(mx_left, height[left])
-                water += max(mx_left - height[left], 0)
+                water += mx_left - height[left]
             else:
                 right -= 1
                 mx_right = max(mx_right, height[right])
-                water += max(mx_right - height[right], 0)
+                water += mx_right - height[right]
         return water
