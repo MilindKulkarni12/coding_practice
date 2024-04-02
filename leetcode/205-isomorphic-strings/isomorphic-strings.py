@@ -1,9 +1,11 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         d = {}
-        f1 = Counter(s).keys()
-        f2 = Counter(t).keys()
-        if len(f1) != len(f2):
+        # f1 = Counter(s).keys()
+        # f2 = Counter(t).keys()
+        # if len(f1) != len(f2):
+        #     return False
+        if len(set(s)) != len(set(t)):
             return False
         for i in range(len(s)):
             val = d.get(s[i], -1)
