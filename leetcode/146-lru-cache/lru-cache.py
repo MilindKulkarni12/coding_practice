@@ -7,14 +7,14 @@ class LRUCache:
 
     def get(self, key: int) -> int:
         self.time += 1
-        if self.lru.get(key, -1) != -1:
+        if key in self.lru:
             self.lru[key] = (self.lru[key][0], self.time)
             return self.lru[key][0]
         return -1
 
     def put(self, key: int, value: int) -> None:
         self.time += 1
-        if self.lru.get(key, False): # existing
+        if key in self.lru: # existing
             self.lru[key] = (value, self.time)
         else: # new
             if self.cap == 0:
