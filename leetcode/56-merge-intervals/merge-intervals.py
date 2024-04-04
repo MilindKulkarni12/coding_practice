@@ -5,7 +5,6 @@ class Solution:
         s, e = new_intervals[0]
         for i in range(1, len(new_intervals)):
             s1, e1 = new_intervals[i]
-
             if s1 <= e:
                 e = max(e, e1)
                 continue
