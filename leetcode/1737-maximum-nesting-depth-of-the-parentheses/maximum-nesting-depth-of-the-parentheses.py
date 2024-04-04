@@ -1,7 +1,6 @@
 class Solution:
     def maxDepth(self, s: str) -> int:
-        max_depth = 0
-        curr_depth = 0
+        max_depth = curr_depth = 0
 
         for c in s:
             if c == '(':
