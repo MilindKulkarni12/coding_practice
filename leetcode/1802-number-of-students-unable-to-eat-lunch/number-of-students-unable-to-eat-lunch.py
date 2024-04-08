@@ -8,10 +8,11 @@ class Solution:
                 i += 1
                 j += 1
             else:
+                if students[i % n] == -4:
+                    return n - j
                 students.append(students[i])
+                students[i % n] -= 1
                 i += 1
-            if i > n*n:
-                return n - j
         return 0
 
             
