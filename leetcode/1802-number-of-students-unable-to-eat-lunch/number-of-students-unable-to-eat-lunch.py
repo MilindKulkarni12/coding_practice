@@ -4,10 +4,9 @@ class Solution:
         j = 0
         last_found_i = -1
         n = len(students)
-        print(n)
+        # print(n)
         while j < n:
             # print('i:', i, 'students[i]:', students[i], 'j:', j, 'sandwiches[j]:', sandwiches[j], last_found_i)
-            
             if students[i] == sandwiches[j] and students[i] != -1:
                 students[i] = -1
                 last_found_i = i
