@@ -1,7 +1,7 @@
 class Solution:
     def timeRequiredToBuy(self, tickets: List[int], k: int) -> int:         
         tgt = tickets[k]
-        tix = 0
+        tix = tgt
         for i in range(len(tickets)):
             # print(tix)
             if i < k:
@@ -14,4 +14,4 @@ class Solution:
                     tix += tickets[i]
                 else:
                     tix += tgt - 1
-        return tix + tgt
+        return tix
