@@ -39,7 +39,7 @@ class Solution:
                 return
         
         fx(root, '')
-        print(ans)
+        # print(ans)
         ans.sort()
-        print(ans)
+        # print(ans)
         return ans[0]
