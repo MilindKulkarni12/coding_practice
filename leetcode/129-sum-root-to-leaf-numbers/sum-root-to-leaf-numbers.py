@@ -13,8 +13,8 @@ class Solution:
                 right = fx(root.right)
                 
                 if left and right:
-                    left = [pref + i for i in left] if left else [pref]
-                    right = [pref + i for i in right] if right else [pref]
+                    left = [pref + i for i in left]
+                    right = [pref + i for i in right]
                     return left + right
                 elif left:
                     left = [pref + i for i in left] if left else [pref]
