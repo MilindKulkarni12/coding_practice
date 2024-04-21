@@ -10,8 +10,7 @@ class Solution:
                 k -= 1
             elif i == len(nums):
                 prev += k
-                missing = prev
-                k = 0
+                return prev
             else:
                 prev = nums[i]
                 i += 1
