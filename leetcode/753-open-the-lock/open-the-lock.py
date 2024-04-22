@@ -29,13 +29,9 @@ class Solution:
         pending_combinations = deque()
 
         turns = 0
-
-        # If the starting combination is also a dead-end, 
-        # then we can't move from the starting combination.
         if "0000" in visited_combinations:
             return -1
 
-        # Start with the initial combination '0000'.
         pending_combinations.append("0000")
         visited_combinations.add("0000")
 
