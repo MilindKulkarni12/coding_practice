@@ -1,21 +1,17 @@
 class Solution:
     def tribonacci(self, n: int) -> int:
-        t0 = 0
-        t1 = t2 = 1
-        if n == 0:
-            return t0
-        elif n == 1:
-            return t1
-        elif n == 2:
-            return t2
+        t = [0, 1, 1]
+        if n < 3:
+            return t[n]
 
         i = 2
-        t = 0
+        curr = 0
         while i < n:
-            t = t0 + t1 + t2
-            t0 = t1
-            t1 = t2
-            t2 = t
+            # print(i, t)
+            curr = t[2] + t[1] + t[0]
+            t[0] = t[1]
+            t[1] = t[2]
+            t[2] = curr
             i += 1
-        return t
+        return t[2]
  
