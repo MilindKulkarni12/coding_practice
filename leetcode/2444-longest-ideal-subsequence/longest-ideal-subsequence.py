@@ -9,22 +9,21 @@ class Solution:
                 if abs(curr - prev) <= k:
                     longest = max(longest, 1 + dp[prev])
             dp[curr] = max(longest, dp[curr])
-
         return max(dp)
+
         # n = len(s)
         # self.max_len = -1
         # dp = {}
 
-        # def fx(subseq, i):
+        # def fx(prev, i):
         #     if i == n:
         #         # print(s1)
         #         return 0
-            
-        #     if (subseq, i) in dp:
-        #         return dp[(subseq, i)]
-        #     if (not subseq) or  (abs(ord(s[i]) - ord(subseq[-1])) <= k):
-        #         dp[(subseq, i)] = 1 + max(fx(subseq, i + 1), fx(subseq + s[i], i + 1))
+        #     if (prev, i) in dp:
+        #         return dp[(prev, i)]
+        #     if (not prev) or  (abs(ord(s[i]) - ord(prev)) <= k):
+        #         dp[(prev, i)] = max(1 + fx(s[i], i + 1), fx(prev, i + 1))
         #     else:
-        #         dp[(subseq, i)] = 1 + fx(subseq, i + 1) 
-        #     return dp[(subseq, i)]
+        #         dp[(prev, i)] = fx(prev, i + 1) 
+        #     return dp[(prev, i)]
         # return fx('', 0)
