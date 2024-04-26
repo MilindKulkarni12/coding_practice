@@ -12,13 +12,15 @@ class Solution:
         # return min(prev_row)
         
         size = len(grid)
+        if size == 1:
+            return grid[0][0]
+
         prev_row = [0] * size
         for row in grid:
             curr_row = [0] * size
             for i, n in enumerate(row):
                 curr_row[i] = n
                 lst = prev_row[0:i] + prev_row[i+1:size]
-                if lst:
-                    curr_row[i] += min(lst)
+                curr_row[i] += min(lst)
             prev_row = curr_row
         return min(prev_row)
