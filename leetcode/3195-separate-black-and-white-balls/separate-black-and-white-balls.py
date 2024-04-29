@@ -14,15 +14,10 @@ class Solution:
             1 swap = 5
 
         """
-        l, r = 0, n - 1
         swaps = total = 0
-        while l < n:
-            if s[l] == '0':
-                l += 1
+        for i in range(n):
+            if s[i] == '0':
                 total += swaps
             else:
                 swaps += 1
-                l += 1
         return total
-
-
