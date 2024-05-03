@@ -15,5 +15,4 @@ class Solution:
             elif v1[i] < v2[i]:
                 return -1
         return 0
-
         
