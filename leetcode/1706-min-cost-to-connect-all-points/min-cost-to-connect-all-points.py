@@ -2,9 +2,7 @@ class Solution:
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
         n = len(points)
         vis = set()
-        start = (0, 0)
-        next_edges = [start]
-        heapq.heapify(next_edges)
+        next_edges = [(0, 0)]
         total_cost = 0
 
         while len(vis) < n:
