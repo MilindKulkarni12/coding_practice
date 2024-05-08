@@ -7,12 +7,13 @@ class Solution:
         ans = [0] * n
         for i, val in enumerate(pos):
             s, p = val
-            if i == 0:
+            if i > 2:
+                ans[p] = str(i+1)
+            elif i == 0:
                 ans[p] = 'Gold Medal'
             elif i == 1:
                 ans[p] = 'Silver Medal'
-            elif i == 2:
-                ans[p] = 'Bronze Medal'
             else:
-                ans[p] = str(i+1)
+                ans[p] = 'Bronze Medal'
+                
         return ans
