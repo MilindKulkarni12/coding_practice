@@ -1,9 +1,6 @@
 class Solution:
     def longestPalindrome(self, s: str) -> int:
         freq = Counter(s)
-        if len(freq) == 1:
-            return len(s)
-        # print(freq)
         ans = 0
         odd = False
         for v in freq.values():
