@@ -5,15 +5,11 @@ class Solution:
             return len(s)
         # print(freq)
         ans = 0
-        odd = []
+        odd = False
         for v in freq.values():
             if v % 2 == 0:
                 ans += v
             else:
-                odd.append(v)
-        odd.sort(reverse=True)
-        if odd:
-            ans += odd[0]
-            for o in odd[1:]:
-                ans += o - 1
-        return ans
+                ans += v - 1
+                odd = True
+        return ans + 1 if odd else ans
